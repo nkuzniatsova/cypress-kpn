@@ -1,0 +1,32 @@
+describe('Order SimOnly test', () => {
+  context('McBook 16 resolution', () => {
+    beforeEach(() => {
+      cy.viewport(1536, 960)
+    })
+  })
+  it('Init SimOnly order', () => {
+    cy.visit('')
+    cy.get('a').contains("Accepteren").then(($btn) => {
+      cy.wrap($btn).click()
+    })
+    cy.get('a').contains("Sim Only bestellen").click({force: true})
+    cy.url().should('eq', Cypress.config().baseUrl + '/sim-only/bestellen')
+    cy.get('input').contains("Kies dit abonnement").click({force: true})
+    cy.url().should('eq', Cypress.config().baseUrl + '/sim-only/bestellen/simkaart')
+    cy.get('input').contains("Verder").click()
+    cy.url().should('eq', Cypress.config().baseUrl + '/sim-only/bestellen/nummerbehoud')
+    cy.get("[data-test-id='submit-numberporting']").click()
+    cy.get("[data-test-id='firstName']").type("Test")
+    cy.get("[data-test-id='lastName']").type("Simyo Tester")
+    cy.get("[data-test-id='birthdate']").type("01-01-2001")
+    cy.get("[data-test-id='zipCode']").type("1043EJ")
+    cy.get("[data-test-id='houseNumber']").type("121")
+    cy.get("[data-test-id='email']").type("kpn@kpn.com")
+    cy.get("[data-test-id='submit-customer']").click()
+    cy.url().should('eq', Cypress.config().baseUrl + '/sim-only/bestellen/controle')
+    cy.get("[class='summary__box__step__content__description']").should('contain', 'Dhr. Test Simyo Tester') //kpn@kpn.com<br>Teleportboulevard 121 <br>1043EJ Amsterdam')
+    cy.get("[class='summary__box__step__content__description']").should('contain', 'kpn@kpn.com') 
+    cy.get("[class='summary__box__step__content__description']").should('contain', 'Teleportboulevard 121') 
+    cy.get("[class='summary__box__step__content__description']").should('contain', '1043EJ Amsterdam') 
+}) 
+})
