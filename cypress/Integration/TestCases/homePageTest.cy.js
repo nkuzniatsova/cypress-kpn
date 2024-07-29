@@ -1,7 +1,7 @@
 /// <reference types ="cypress"/>
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 //import { Given } from "@badeball/cypress-cucumber-preprocessor";
-import { HomePageElements } from "../../../PageObjects/PageActions/HomePageActions.js";
+import { HomePageElements } from "../../../PageObjects/PageActions/HomePageActions.js"
 
 const HomePage_Elements = new HomePageElements
 

@@ -9,7 +9,7 @@ Given('User on ControleGegevensPage', function(){
 
 })
 
-When('Verify page URL is correct', function(){
+When('Verify ControleGegevensPage URL is correct', function(){
     ControleGegevensActions_Elements.verifyControleGegevensPageURL()
 })
 

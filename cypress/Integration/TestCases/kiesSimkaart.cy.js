@@ -9,7 +9,7 @@ Given('User on KiesSimkaartPage', function(){
 
 })
 
-When('Verify page URL is correct', function(){
+When('Verify KiesSimkaartPage URL is correct', function(){
     KiesSimkaartActions_Elements.verifyKiesSimkaartPageURL()
 })
 

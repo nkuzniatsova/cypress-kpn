@@ -9,7 +9,7 @@ Given('User on NummerbehoudPage', function(){
 
 })
 
-When('Verify page URL is correct', function(){
+When('Verify NummerbehoudPage URL is correct', function(){
     NummerbehoudActions_Elements.verifyNummerbehoudPageURL()
 })
 

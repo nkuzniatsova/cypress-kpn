@@ -9,7 +9,7 @@ Given('User on PersoonlijkeGegevensPage', function(){
 
 })
 
-When('Verify page URL is correct', function(){
+When('Verify PersoonlijkeGegevensPage URL is correct', function(){
     PersoonlijkeGegevensActions_Elements.verifyMijnGegevensPageURL()
 })
 
